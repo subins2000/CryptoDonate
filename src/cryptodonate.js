@@ -9,10 +9,6 @@
         return Object.assign({}, obj1, obj2);
     }
 
-    var capitalizeFirstLetter = function(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
     var CryptoDonate = {
         config: {
             coin: 'bitcoin',
@@ -25,6 +21,7 @@
 
             strings: {
                 button: 'Donate',
+                dialogHeader: 'Donate',
                 openInWallet: 'Click here to send this address to your wallet.'
             },
 
@@ -81,8 +78,9 @@
         },
 
         showDialog: function($this) {
-            document.getElementById('cryptodonate-action').innerHTML = this.config.strings.button + ' ' + capitalizeFirstLetter(this.config.coin);
+            document.getElementById('cryptodonate-action').innerHTML = this.config.strings.dialogHeader;
             document.getElementById('cryptodonate-coin').src = this.config.baseURL + '/img/icon_' + this.config.coin + '.png';
+            document.getElementById('cryptodonate-coin').title = this.config.coin;
             document.getElementById('cryptodonate-address').value = this.config.address;
             document.getElementById('cryptodonate-wallet').href = this.config.coin + ':' + this.config.address;
             document.getElementById('cryptodonate-qr').src = this.config.getQrImage(this.config.address);
