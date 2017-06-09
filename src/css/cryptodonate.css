@@ -11,17 +11,27 @@
     background: #EEE;
 }
 
-.cryptodonate-btn img, .cryptodonate-btn span{
+.cryptodonate-btn.large {
+    padding: 4px 15px;
+    font-size: 1.5rem;
+}
+
+.cryptodonate-btn img, .cryptodonate-btn span {
     display: inline-block;
     vertical-align: middle;
 }
 
-.cryptodonate-btn img{
+.cryptodonate-btn img {
     height: 16px;
     width: 16px;
 }
 
-.cryptodonate-btn span{
+.cryptodonate-btn.large img {
+    height: 32px;
+    width: 32px;
+}
+
+.cryptodonate-btn span {
     margin-left: 5px;
 }
 
@@ -37,8 +47,10 @@
 
 #cryptodonate-dialog {
     display: none;
-    position: relative;
-    margin: auto;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
     width: 320px;
     padding: 20px 20px 10px;
     border-radius: 10px;
@@ -82,7 +94,7 @@
     width: 24px
 }
 
-#cryptodonate-wallet img{
+#cryptodonate-wallet img {
     height: 100%;
     width: 100%;
 }
