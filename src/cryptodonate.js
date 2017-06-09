@@ -17,11 +17,17 @@
         config: {
             coin: 'bitcoin',
             address: '3Q2zmZA3LsW5JdxkJEPDRbsXu2YzzMQmBQ',
+
             qr: true,
             getQrImage: function(data) {
                 return 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + data;
             },
-            btnText: 'Donate',
+
+            strings: {
+                button: 'Donate',
+                openInWallet: 'Click here to send this address to your wallet.'
+            },
+
             baseURL: '',
         },
 
@@ -33,7 +39,7 @@
         appendTo: function(elem) {
             var donationButton = document.createElement('a');
             donationButton.className = 'cryptodonate-btn';
-            donationButton.innerHTML = '<img src="" />' + this.config.btnText;
+            donationButton.innerHTML = '<img src="" />' + this.config.strings.button;
 
             var $this = this;
             donationButton.addEventListener('click', function() {
@@ -49,7 +55,7 @@
                 dialog = document.createElement('div');
                 dialog.id = 'cryptodonate-dialog';
                 dialog.innerHTML = '<div id="cryptodonate-action"></div>';
-                dialog.innerHTML += '<div id="cryptodonate-addressHolder"><img id="cryptodonate-coin" /><input type="text" id="cryptodonate-address" onclick="this.select();" /><a id="cryptodonate-wallet" target="_blank" href=""><img src="'+ this.config.baseURL +'/img/icon_wallet.png" /></a></div>';
+                dialog.innerHTML += '<div id="cryptodonate-addressHolder"><img id="cryptodonate-coin" /><input type="text" id="cryptodonate-address" onclick="this.select();" /><a id="cryptodonate-wallet" target="_blank" href="" title="' + this.config.strings.openInWallet + '"><img src="' + this.config.baseURL + '/img/icon_wallet.png" /></a></div>';
                 dialog.innerHTML += '<div id="cryptodonate-qrHolder"><img id="cryptodonate-qr"></img></div>';
                 dialog.innerHTML += '<a id="cryptodonate-credit" href="https://subinsb.com/cryptodonate" target="_blank">CryptoDonate</a>';
                 dialog.innerHTML += '<a id="cryptodonate-close">x</a>'
@@ -62,20 +68,20 @@
                 document.body.appendChild(dialogOverlay);
 
                 $this = this;
-                document.addEventListener('keyup', function(e){
-                    if(e.keyCode === 27){
+                document.addEventListener('keyup', function(e) {
+                    if (e.keyCode === 27) {
                         $this.hideDialog();
                     }
                 });
 
-                document.getElementById('cryptodonate-close').addEventListener('click', function(){
+                document.getElementById('cryptodonate-close').addEventListener('click', function() {
                     $this.hideDialog();
                 })
             }
         },
 
         showDialog: function($this) {
-            document.getElementById('cryptodonate-action').innerHTML = this.config.btnText + ' ' + capitalizeFirstLetter(this.config.coin);
+            document.getElementById('cryptodonate-action').innerHTML = this.config.strings.button + ' ' + capitalizeFirstLetter(this.config.coin);
             document.getElementById('cryptodonate-coin').src = this.config.baseURL + '/img/icon_' + this.config.coin + '.png';
             document.getElementById('cryptodonate-address').value = this.config.address;
             document.getElementById('cryptodonate-wallet').href = this.config.coin + ':' + this.config.address;
@@ -85,7 +91,7 @@
             document.getElementById('cryptodonate-overlay').style.display = 'block';
         },
 
-        hideDialog: function(){
+        hideDialog: function() {
             document.getElementById('cryptodonate-dialog').style.display = 'none';
             document.getElementById('cryptodonate-overlay').style.display = 'none';
         }
