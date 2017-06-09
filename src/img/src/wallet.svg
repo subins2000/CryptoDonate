@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 128 128"
+   version="1.1"
+   id="svg29"
+   sodipodi:docname="wallet.svg"
+   inkscape:version="0.92+devel unknown"
+   inkscape:export-filename="/home/simsu/Other/projects/GitHub/CryptoDonate/src/img/icon_wallet.png"
+   inkscape:export-xdpi="24"
+   inkscape:export-ydpi="24">
+  <metadata
+     id="metadata33">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     inkscape:document-rotation="0"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1327"
+     inkscape:window-height="717"
+     id="namedview31"
+     showgrid="false"
+     inkscape:zoom="2.140625"
+     inkscape:cx="35.355197"
+     inkscape:cy="86.475119"
+     inkscape:window-x="41"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg29" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{fill:#bccd30;}.cls-2{fill:#f8991d;}.cls-3{fill:#f8db94;}.cls-4{fill:#314967;}</style>
+  </defs>
+  <title
+     id="title6" />
+  <g
+     id="g867"
+     transform="matrix(0.19993006,0,0,0.19993006,-5.6180339,-26.326014)">
+    <g
+       id="g880"
+       transform="matrix(0.86074735,0,0,0.86074735,3.9129994,107.48912)">
+      <g
+         id="g871">
+        <g
+           id="Layer_1">
+          <path
+             id="path843"
+             fill="#4DB6AC"
+             d="M 771.9,400 C 771.9,605.3 605.3,771.9 400,771.9 194.7,771.9 28.1,605.3 28.1,400 28.1,194.7 194.7,28.1 400,28.1 605.3,28.1 771.9,194.7 771.9,400 Z"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+      <g
+         id="Layer_2">
+        <g
+           id="g850">
+          <polygon
+             fill="none"
+             points="370.6,613.2 582.8,231.7 170.8,380.6 311,461.8 "
+             stroke="#FFFFFF"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             stroke-miterlimit="10"
+             stroke-width="16"
+             id="polygon846" />
+          <line
+             fill="none"
+             stroke="#FFFFFF"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             stroke-miterlimit="10"
+             stroke-width="16"
+             x1="311"
+             x2="582.79999"
+             y1="461.79999"
+             y2="231.7"
+             id="line848" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g893"
+     transform="matrix(1.1627908,0,0,1.1627908,-102.32559,-20.837217)">
+    <g
+       transform="matrix(0.41417698,0,0,0.41759334,80.958992,80.394359)"
+       id="_05_Wallet"
+       data-name="05 Wallet">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8"
+         d="m 99.14,30.55 a 4,4 0 0 0 -4.81,-3 L 86,29.51 82.3,22 A 4,4 0 0 0 76.94,20.19 L 37,40 h 64.38 z"
+         class="cls-1" />
+      <rect
+         id="rect10"
+         y="40"
+         x="19"
+         width="90"
+         ry="6"
+         rx="6"
+         height="72"
+         class="cls-2" />
+      <rect
+         id="rect12"
+         y="62"
+         x="76"
+         width="36"
+         ry="4"
+         rx="4"
+         height="28"
+         class="cls-3" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path14"
+         d="m 76.46,33.8 18.33,-4.28 a 2,2 0 0 1 2.4,1.48 l 0.86,3.7 a 2,2 0 0 0 3.89,-0.91 l -0.86,-3.7 A 6,6 0 0 0 93.87,25.61 L 75.54,29.9 a 2.0035219,2.0035219 0 0 0 0.92,3.9 z"
+         class="cls-4" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path16"
+         d="M 21,86.43 V 46 a 4,4 0 0 1 4,-4 h 59.15 a 2,2 0 0 0 0,-4 H 58.47 L 70.88,35.1 A 2,2 0 0 0 70,31.2 L 49.66,35.95 77.83,22 a 2,2 0 0 1 2.68,0.9 l 1,2.05 a 2.0013121,2.0013121 0 0 0 3.59,-1.77 l -1,-2.06 a 6,6 0 0 0 -8,-2.72 L 36.5,38 H 25 a 8,8 0 0 0 -8,8 v 40.43 a 2,2 0 0 0 4,0 z"
+         class="cls-4" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path18"
+         d="M 82.79,110 H 25 a 4,4 0 0 1 -4,-4 V 94.3 a 2,2 0 0 0 -4,0 V 106 a 8,8 0 0 0 8,8 h 57.79 a 2,2 0 0 0 0,-4 z"
+         class="cls-4" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path20"
+         d="M 107,95.87 V 106 a 4,4 0 0 1 -4,4 H 89.42 a 2,2 0 0 0 0,4 H 103 a 8,8 0 0 0 8,-8 V 95.87 a 2,2 0 0 0 -4,0 z"
+         class="cls-4" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path22"
+         d="M 111,60.81 V 46 a 8,8 0 0 0 -8,-8 H 91.55 a 2,2 0 0 0 0,4 H 103 a 4,4 0 0 1 4,4 V 60 H 80 a 6,6 0 0 0 -6,6 2,2 0 0 0 4,0 2,2 0 0 1 2,-2 h 28 a 2,2 0 0 1 2,2 v 10 a 2,2 0 0 0 4,0 V 66 a 6,6 0 0 0 -3,-5.19 z"
+         class="cls-4" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path24"
+         d="m 110,82 v 4 a 2,2 0 0 1 -2,2 H 80 A 2,2 0 0 1 78,86 V 73.12 a 2,2 0 0 0 -4,0 V 86 a 6,6 0 0 0 6,6 h 28 a 6,6 0 0 0 6,-6 v -4 a 2,2 0 0 0 -4,0 z"
+         class="cls-4" />
+      <circle
+         id="circle26"
+         r="5"
+         cy="76"
+         cx="88.550003"
+         class="cls-4" />
+    </g>
+  </g>
+</svg>

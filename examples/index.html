@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../src/cryptodonate.js" type="text/javascript"></script>
+        <link href='../src/css/cryptodonate.css' rel='stylesheet' />
+        <title>
+            CryptoDonate
+        </title>
+    </head>
+    <body>
+        <div id="content">
+        </div>
+        <script>
+            (function(){
+                var cd = new CryptoDonate({
+                    baseURL: '../src/'
+                });
+                cd.appendTo(document.getElementById('content'));
+            })(CryptoDonate);
+        </script>
+    </body>
+</html>
