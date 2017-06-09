@@ -18,20 +18,21 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 #cryptodonate-dialog {
     display: none;
     position: relative;
     margin: auto;
-    width: 300px;
-    padding: 10px 10px 10px;
+    width: 320px;
+    padding: 20px 20px 10px;
     border-radius: 10px;
-    background: #050013;
-    color: #fff;
+    background: #ddd;
+    color: #000;
     z-index: 9999999;
     box-sizing: border-box;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
 }
 
 #cryptodonate-dialog * {
@@ -71,6 +72,7 @@
 }
 
 #cryptodonate-qrHolder {
+    position: relative;
     background: #fff;
     padding: 20px 0;
     text-align: center;
@@ -90,11 +92,11 @@
 #cryptodonate-credit {
     display: block;
     margin-top: 30px;
-    color: #fff;
+    color: #000;
     text-decoration: none;
 }
 
-#cryptodonate-close{
+#cryptodonate-close {
     position: absolute;
     top: 0;
     right: 20px;
