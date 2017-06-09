@@ -94,6 +94,14 @@
     text-decoration: none;
 }
 
+#cryptodonate-close{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
 @media (max-width: 370px) {
     #cryptodonate-dialog {
         width: 100%;

@@ -52,6 +52,7 @@
                 dialog.innerHTML += '<div id="cryptodonate-addressHolder"><img id="cryptodonate-coin" /><input type="text" id="cryptodonate-address" onclick="this.select();" /></div>';
                 dialog.innerHTML += '<div id="cryptodonate-qrHolder"><img id="cryptodonate-qr"></img></div>';
                 dialog.innerHTML += '<a id="cryptodonate-credit" href="https://subinsb.com/cryptodonate" target="_blank">CryptoDonate</a>';
+                dialog.innerHTML += '<a id="cryptodonate-close">x</a>'
 
                 document.body.appendChild(dialog);
 
@@ -60,12 +61,16 @@
 
                 document.body.appendChild(dialogOverlay);
 
+                $this = this;
                 document.addEventListener('keyup', function(e){
                     if(e.keyCode === 27){
-                        document.getElementById('cryptodonate-dialog').style.display = 'none';
-                        document.getElementById('cryptodonate-overlay').style.display = 'none';
+                        $this.hideDialog();
                     }
                 });
+
+                document.getElementById('cryptodonate-close').addEventListener('click', function(){
+                    $this.hideDialog();
+                })
             }
         },
 
@@ -77,6 +82,11 @@
 
             document.getElementById('cryptodonate-dialog').style.display = 'block';
             document.getElementById('cryptodonate-overlay').style.display = 'block';
+        },
+
+        hideDialog: function(){
+            document.getElementById('cryptodonate-dialog').style.display = 'none';
+            document.getElementById('cryptodonate-overlay').style.display = 'none';
         }
     };
 
