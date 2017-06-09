@@ -59,6 +59,13 @@
                 dialogOverlay.id = 'cryptodonate-overlay';
 
                 document.body.appendChild(dialogOverlay);
+
+                document.addEventListener('keyup', function(e){
+                    if(e.keyCode === 27){
+                        document.getElementById('cryptodonate-dialog').style.display = 'none';
+                        document.getElementById('cryptodonate-overlay').style.display = 'none';
+                    }
+                });
             }
         },
 
