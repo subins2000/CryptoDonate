@@ -11,6 +11,20 @@
     background: #EEE;
 }
 
+.cryptodonate-btn img, .cryptodonate-btn span{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cryptodonate-btn img{
+    height: 16px;
+    width: 16px;
+}
+
+.cryptodonate-btn span{
+    margin-left: 5px;
+}
+
 #cryptodonate-overlay {
     display: none;
     position: absolute;

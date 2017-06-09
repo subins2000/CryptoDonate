@@ -21,6 +21,9 @@
 
             strings: {
                 button: 'Donate',
+                coins: {
+                    bitcoin: 'Bitcoin'
+                },
                 dialogHeader: 'Donate',
                 openInWallet: 'Click here to send this address to your wallet.'
             },
@@ -36,7 +39,8 @@
         appendTo: function(elem) {
             var donationButton = document.createElement('a');
             donationButton.className = 'cryptodonate-btn';
-            donationButton.innerHTML = '<img src="" />' + this.config.strings.button;
+            donationButton.innerHTML = '<img src="' + this.config.baseURL + '/img/icon_' + this.config.coin + '.png" /><span>' + this.config.strings.button + '</span>';
+            donationButton.title = this.config.strings.button + ' ' + this.config.strings.coins[this.config.coin];
 
             var $this = this;
             donationButton.addEventListener('click', function() {
