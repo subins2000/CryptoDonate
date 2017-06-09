@@ -49,7 +49,7 @@
                 dialog = document.createElement('div');
                 dialog.id = 'cryptodonate-dialog';
                 dialog.innerHTML = '<div id="cryptodonate-action"></div>';
-                dialog.innerHTML += '<div id="cryptodonate-addressHolder"><img id="cryptodonate-coin" /><input type="text" id="cryptodonate-address" onclick="this.select();" /></div>';
+                dialog.innerHTML += '<div id="cryptodonate-addressHolder"><img id="cryptodonate-coin" /><input type="text" id="cryptodonate-address" onclick="this.select();" /><a id="cryptodonate-wallet" target="_blank" href=""><img src="'+ this.config.baseURL +'/img/icon_wallet.png" /></a></div>';
                 dialog.innerHTML += '<div id="cryptodonate-qrHolder"><img id="cryptodonate-qr"></img></div>';
                 dialog.innerHTML += '<a id="cryptodonate-credit" href="https://subinsb.com/cryptodonate" target="_blank">CryptoDonate</a>';
                 dialog.innerHTML += '<a id="cryptodonate-close">x</a>'
@@ -78,6 +78,7 @@
             document.getElementById('cryptodonate-action').innerHTML = this.config.btnText + ' ' + capitalizeFirstLetter(this.config.coin);
             document.getElementById('cryptodonate-coin').src = this.config.baseURL + '/img/icon_' + this.config.coin + '.png';
             document.getElementById('cryptodonate-address').value = this.config.address;
+            document.getElementById('cryptodonate-wallet').href = this.config.coin + ':' + this.config.address;
             document.getElementById('cryptodonate-qr').src = this.config.getQrImage(this.config.address);
 
             document.getElementById('cryptodonate-dialog').style.display = 'block';

@@ -45,23 +45,32 @@
     padding-bottom: 1em;
 }
 
-#cryptodonate-coin, #cryptodonate-address {
-    display: inline-block;
-    vertical-align: middle;
-}
-
 #cryptodonate-coin {
     height: 24px;
     width: 24px;
     position: absolute;
-    left: 5px;
     top: 4px;
+    left: 5px;
 }
 
 #cryptodonate-address {
     height: 32px;
     width: 100%;
-    padding: 5px 10px 5px 30px;
+    padding: 5px 30px 5px 30px;
+}
+
+#cryptodonate-wallet {
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 5px;
+    height: 24px;
+    width: 24px
+}
+
+#cryptodonate-wallet img{
+    height: 100%;
+    width: 100%;
 }
 
 #cryptodonate-action {
