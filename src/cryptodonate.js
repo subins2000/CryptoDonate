@@ -9,8 +9,8 @@
         return Object.assign({}, obj1, obj2);
     }
 
-    var CryptoDonate = {
-        config: {
+    window.CryptoDonate = function(config){
+        this.config = {
             coin: 'bitcoin',
             address: '3Q2zmZA3LsW5JdxkJEPDRbsXu2YzzMQmBQ',
 
@@ -33,14 +33,9 @@
             baseURL: '',
             buttonLarge: false,
             buttonClass: '',
-        },
+        };
 
-        init: function(config) {
-            this.config = extend(this.config, config);
-            return this;
-        },
-
-        getString: function(name) {
+        this.getString = function(name) {
             var string = this.config.strings[name];
 
             var substitution = {
@@ -54,9 +49,9 @@
             }
 
             return string;
-        },
+        };
 
-        appendTo: function(elem) {
+        this.appendTo = function(elem) {
             var donationButton = document.createElement('a');
             donationButton.className = 'cryptodonate-btn ' + this.config.buttonClass;
             donationButton.innerHTML = '<img src="' + this.config.baseURL + '/img/icon_' + this.config.coin + '.png" /><span>' + this.config.strings.button + '</span>';
@@ -73,9 +68,9 @@
 
             elem.appendChild(donationButton);
             this.makeDialog();
-        },
+        };
 
-        makeDialog: function() {
+        this.makeDialog = function() {
             if (document.getElementById('cryptodonate-dialog') === null) {
                 dialog = document.createElement('div');
                 dialog.id = 'cryptodonate-dialog';
@@ -104,9 +99,9 @@
                     $this.hideDialog();
                 })
             }
-        },
+        };
 
-        showDialog: function($this) {
+        this.showDialog = function($this) {
             document.getElementById('cryptodonate-action').innerHTML = this.getString('dialogHeader');
 
             document.getElementById('cryptodonate-coin').src = this.config.baseURL + '/img/icon_' + this.config.coin + '.png';
@@ -121,13 +116,14 @@
             document.getElementById('cryptodonate-overlay').style.display = 'block';
         },
 
-        hideDialog: function() {
+        this.hideDialog = function() {
             document.getElementById('cryptodonate-dialog').style.display = 'none';
             document.getElementById('cryptodonate-overlay').style.display = 'none';
-        }
-    };
+        };
 
-    window.CryptoDonate = function(config) {
-        return CryptoDonate.init(config);
+        /**
+         * Constructor
+         */
+        this.config = extend(this.config, config);
     };
 })(document);
