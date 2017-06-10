@@ -47,7 +47,7 @@
                     <p>
                         Use this code to display it wherever you want :
                     </p>
-                    <pre><code id="code"></code></pre>
+                    <pre id="code-wrapper"><code id="code"></code></pre>
                 </div>
             </div>
         </div>
@@ -58,12 +58,15 @@
         <script src="widget.js">
         </script>
         <style>
-            #cryptodonate-address{
+            #cryptodonate-address {
                 color: #000;
             }
-            #preview{
+            #preview {
                 border: 2px dashed #000;
                 padding: 20px 10px;
+            }
+            #code-wrapper {
+                padding-left: 2em;
             }
         </style>
     </body>

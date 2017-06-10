@@ -1,4 +1,20 @@
 (function() {
+    function SelectText(text) {
+        var doc = document,
+            range, selection;
+        if (doc.body.createTextRange) {
+            range = document.body.createTextRange();
+            range.moveToElementText(text);
+            range.select();
+        } else if (window.getSelection) {
+            selection = window.getSelection();
+            range = document.createRange();
+            range.selectNodeContents(text);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    }
+
     var code = 'var cd = new CryptoDonate({\n';
     code += '  coin: "{coin}",\n';
     code += '  address: "{address}",\n';
@@ -35,7 +51,11 @@
         $('#update').on('click', update);
         $('#form input').on('keyup', update);
         $('#form select').material_select();
-        $('#form select').on('change', update)
+        $('#form select').on('change', update);
+
+        $('#code').click(function(){
+            SelectText(this);
+        });
 
         update();
     });
