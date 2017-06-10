@@ -21,6 +21,12 @@
                     <th>
                         Ethereum
                     </th>
+                    <th>
+                        Litecoin
+                    </th>
+                    <th>
+                        Monero
+                    </th>
                 </thead>
                 <tbody>
                     <tr>
@@ -33,6 +39,10 @@
                         </td>
                         <td>
                             <div class="eth">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ltc">
                             </div>
                         </td>
                     </tr>
@@ -48,6 +58,10 @@
                             <div class="eth large">
                             </div>
                         </td>
+                        <td>
+                            <div class="ltc large">
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -61,6 +75,10 @@
                             <div class="eth dark">
                             </div>
                         </td>
+                        <td>
+                            <div class="ltc dark">
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -68,7 +86,7 @@
         <script>
             (function(){
                 var btcElems = document.getElementsByClassName('btc');
-                for(i = 0;i < btcElems.length;i++) {
+                for(var i = 0;i < btcElems.length;i++) {
                     var cd = new CryptoDonate({
                         baseURL: '../src/',
                         buttonLarge: btcElems[i].className.match('large') !== null,
@@ -80,7 +98,7 @@
                 }
 
                 var ethElems = document.getElementsByClassName('eth');
-                for(i = 0;i < ethElems.length;i++) {
+                for(var i = 0;i < ethElems.length;i++) {
                     var cd = new CryptoDonate({
                         coin: 'ethereum',
                         address: '0xF9744E1504a1ACB0493E6482525312d50af2785D',
@@ -91,6 +109,20 @@
                         dialogClass: ethElems[i].className.match('dark') !== null ? 'dark' : ''
                     });
                     cd.appendTo(ethElems[i]);
+                }
+
+                var ltcElems = document.getElementsByClassName('ltc');
+                for(var i = 0;i < ethElems.length;i++) {
+                    var cd = new CryptoDonate({
+                        coin: 'litecoin',
+                        address: 'LTQhef3dKB7vwdCGuhEuJvtDuemQEFEGvP',
+                        baseURL: '../src/',
+                        buttonLarge: ltcElems[i].className.match('large') !== null,
+
+                        buttonClass: ltcElems[i].className.match('dark') !== null ? 'dark' : '',
+                        dialogClass: ltcElems[i].className.match('dark') !== null ? 'dark' : ''
+                    });
+                    cd.appendTo(ltcElems[i]);
                 }
             })(CryptoDonate);
         </script>
