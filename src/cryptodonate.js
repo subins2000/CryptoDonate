@@ -21,6 +21,7 @@
 
             strings: {
                 button: 'Donate',
+                buttonTitle: 'Donate {coinName}',
                 coins: {
                     bitcoin: 'Bitcoin'
                 },
@@ -59,7 +60,7 @@
             var donationButton = document.createElement('a');
             donationButton.className = 'cryptodonate-btn ' + this.config.buttonClass;
             donationButton.innerHTML = '<img src="' + this.config.baseURL + '/img/icon_' + this.config.coin + '.png" /><span>' + this.config.strings.button + '</span>';
-            donationButton.title = this.config.strings.button + ' ' + this.config.strings.coins[this.config.coin];
+            donationButton.title = this.getString('buttonTitle');
 
             if (this.config.buttonLarge) {
                 donationButton.className += ' large';
