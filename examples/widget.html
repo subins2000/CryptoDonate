@@ -5,8 +5,6 @@
         <link async="async" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" rel="stylesheet"/>
         <link async="async" href="../src/css/cryptodonate.css" rel="stylesheet"/>
         <link async="async" href="../src/css/cryptodonate.dark.css" rel="stylesheet"/>
-        <script async="async" src="../src/cryptodonate.js">
-        </script>
     </head>
     <body>
         <h2>
@@ -15,7 +13,10 @@
         <div id="content">
             <div class="row">
                 <div class="col s4 m4 l4" id="form">
-                    <div class="input-field col s12 l12">
+                    <div class="input-field col s12">
+                        <label for="coin">
+                            Coin
+                        </label>
                         <select id="coin">
                             <option value="bitcoin">
                                 Bitcoin
@@ -36,6 +37,21 @@
                         <label for="address">
                             Wallet Address
                         </label>
+                    </div>
+                    <div class="input-field col s12">
+                        <label for="theme">
+                            Theme
+                        </label>
+                        <select id="theme">
+                            <option value="">
+                                Light
+                            </option>
+                            <option value="dark">
+                                Dark
+                            </option>
+                        </select>
+                    </div>
+                    <div class="input-field col s12">
                         <a class="btn" id="update">
                             Update
                         </a>
@@ -54,6 +70,8 @@
         <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript">
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js">
+        </script>
+        <script src="../src/cryptodonate.js">
         </script>
         <script src="widget.js">
         </script>
