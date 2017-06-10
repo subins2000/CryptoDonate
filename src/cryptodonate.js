@@ -24,7 +24,8 @@
                 coins: {
                     bitcoin: 'Bitcoin'
                 },
-                dialogHeader: 'Donate {coin}',
+                dialogHeader: 'Donate {coinName}',
+                dialogHelper: 'Please use this {coin} address to donate. Thanks !',
                 openInWallet: 'Click here to send this address to your wallet.'
             },
 
@@ -38,13 +39,19 @@
             return this;
         },
 
-        getString: function(name, substitution) {
+        getString: function(name) {
             var string = this.config.strings[name];
+
+            var substitution = {
+                coin: this.config.coin,
+                coinName: this.config.strings.coins[this.config.coin],
+            };
             var keys = Object.keys(substitution);
 
             for (i = 0; i < keys.length; i++) {
                 string = string.replace('{' + keys[i] + '}', substitution[keys[i]]);
             }
+
             return string;
         },
 
@@ -72,6 +79,7 @@
                 dialog = document.createElement('div');
                 dialog.id = 'cryptodonate-dialog';
                 dialog.innerHTML = '<div id="cryptodonate-action"></div>';
+                dialog.innerHTML += '<p id="cryptodonate-helper"></p>';
                 dialog.innerHTML += '<div id="cryptodonate-addressHolder"><img id="cryptodonate-coin" /><input type="text" id="cryptodonate-address" onclick="this.select();" /><a id="cryptodonate-wallet" target="_blank" href="" title="' + this.config.strings.openInWallet + '"><img src="' + this.config.baseURL + '/img/icon_wallet.png" /></a></div>';
                 dialog.innerHTML += '<div id="cryptodonate-qrHolder"><img id="cryptodonate-qr"></img></div>';
                 dialog.innerHTML += '<a id="cryptodonate-credit" href="https://subinsb.com/cryptodonate" target="_blank">CryptoDonate</a>';
@@ -98,12 +106,13 @@
         },
 
         showDialog: function($this) {
-            document.getElementById('cryptodonate-action').innerHTML = this.getString('dialogHeader', {
-                coin: this.config.strings.coins[this.config.coin]
-            });
+            document.getElementById('cryptodonate-action').innerHTML = this.getString('dialogHeader');
+
             document.getElementById('cryptodonate-coin').src = this.config.baseURL + '/img/icon_' + this.config.coin + '.png';
             document.getElementById('cryptodonate-coin').title = this.config.coin;
             document.getElementById('cryptodonate-address').value = this.config.address;
+            document.getElementById('cryptodonate-helper').innerHTML = this.getString('dialogHelper');
+
             document.getElementById('cryptodonate-wallet').href = this.config.coin + ':' + this.config.address;
             document.getElementById('cryptodonate-qr').src = this.config.getQrImage(this.config.address);
 
