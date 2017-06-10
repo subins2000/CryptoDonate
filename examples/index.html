@@ -45,6 +45,10 @@
                             <div class="ltc">
                             </div>
                         </td>
+                        <td>
+                            <div class="xmr">
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -62,6 +66,10 @@
                             <div class="ltc large">
                             </div>
                         </td>
+                        <td>
+                            <div class="xmr large">
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -77,6 +85,10 @@
                         </td>
                         <td>
                             <div class="ltc dark">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="xmr dark">
                             </div>
                         </td>
                     </tr>
@@ -123,6 +135,20 @@
                         dialogClass: ltcElems[i].className.match('dark') !== null ? 'dark' : ''
                     });
                     cd.appendTo(ltcElems[i]);
+                }
+
+                var xmrElems = document.getElementsByClassName('xmr');
+                for(var i = 0;i < ethElems.length;i++) {
+                    var cd = new CryptoDonate({
+                        coin: 'monero',
+                        address: '463ZgKoBzN4WXaQPMVvCHHBe8ZE7cg44Q5mukaWfnZ2ngxUXYTaAg5jbxiBfk2jKyCSEB3qDHwmEgNL6KWqpBc2i9As4ez3',
+                        baseURL: '../src/',
+                        buttonLarge: xmrElems[i].className.match('large') !== null,
+
+                        buttonClass: xmrElems[i].className.match('dark') !== null ? 'dark' : '',
+                        dialogClass: xmrElems[i].className.match('dark') !== null ? 'dark' : ''
+                    });
+                    cd.appendTo(xmrElems[i]);
                 }
             })(CryptoDonate);
         </script>
