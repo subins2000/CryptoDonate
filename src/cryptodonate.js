@@ -33,6 +33,8 @@
             baseURL: '',
             buttonLarge: false,
             buttonClass: '',
+
+            dialogClass: '',
         };
 
         this.getString = function(name) {
@@ -74,6 +76,7 @@
             if (document.getElementById('cryptodonate-dialog') === null) {
                 dialog = document.createElement('div');
                 dialog.id = 'cryptodonate-dialog';
+
                 dialog.innerHTML = '<div id="cryptodonate-action"></div>';
                 dialog.innerHTML += '<p id="cryptodonate-helper"></p>';
                 dialog.innerHTML += '<div id="cryptodonate-addressHolder"><img id="cryptodonate-coin" /><input type="text" id="cryptodonate-address" onclick="this.select();" /><a id="cryptodonate-wallet" target="_blank" href="" title="' + this.config.strings.openInWallet + '"><img src="' + this.config.baseURL + '/img/icon_wallet.png" /></a></div>';
@@ -112,7 +115,10 @@
             document.getElementById('cryptodonate-wallet').href = this.config.coin + ':' + this.config.address;
             document.getElementById('cryptodonate-qr').src = this.config.getQrImage(this.config.address);
 
-            document.getElementById('cryptodonate-dialog').style.display = 'block';
+            var dialog = document.getElementById('cryptodonate-dialog');
+            dialog.className = this.config.dialogClass;
+            dialog.style.display = 'block';
+
             document.getElementById('cryptodonate-overlay').style.display = 'block';
         },
 
