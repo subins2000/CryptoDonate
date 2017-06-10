@@ -14,8 +14,8 @@
             baseURL: '../src/'
         });
 
-        $('#preview').html('');
-        cd.appendTo(document.getElementById('preview'));
+        $('#btn-preview').html('');
+        cd.appendTo(document.getElementById('btn-preview'));
 
         var widgetCode = code;
         var substitution = {
@@ -36,5 +36,7 @@
         $('#form input').on('keyup', update);
         $('#form select').material_select();
         $('#form select').on('change', update)
+
+        update();
     });
 })(document);
