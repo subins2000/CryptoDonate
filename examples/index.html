@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="../src/cryptodonate.js" type="text/javascript">
+        <script src="../src/cryptodonate.js">
         </script>
         <link href="../src/css/cryptodonate.css" rel="stylesheet"/>
+        <link href="../src/css/cryptodonate.dark.css" rel="stylesheet"/>
         <title>
             CryptoDonate
         </title>
@@ -13,9 +14,18 @@
             <h2>
                 Normal Button
             </h2>
-            <div id="normal"></div>
-            <h2>Big Button</h2>
-            <div id="big"></div>
+            <div id="normal">
+            </div>
+            <h2>
+                Big Button
+            </h2>
+            <div id="big">
+            </div>
+            <h2>
+                Dark Button
+            </h2>
+            <div id="dark">
+            </div>
         </div>
         <script>
             (function(){
@@ -29,6 +39,13 @@
                     buttonLarge: true
                 });
                 cd.appendTo(document.getElementById('big'));
+
+                var cd = new CryptoDonate({
+                    baseURL: '../src/',
+                    buttonClass: 'dark',
+                    dialogClass: 'dark'
+                });
+                cd.appendTo(document.getElementById('dark'));
             })(CryptoDonate);
         </script>
     </body>
