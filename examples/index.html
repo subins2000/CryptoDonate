@@ -11,43 +11,87 @@
     </head>
     <body>
         <div id="content">
-            <h2>
-                Normal Button
-            </h2>
-            <div id="normal">
-            </div>
-            <h2>
-                Big Button
-            </h2>
-            <div id="big">
-            </div>
-            <h2>
-                Dark Button
-            </h2>
-            <div id="dark">
-            </div>
+            <table>
+                <thead>
+                    <th>
+                    </th>
+                    <th>
+                        Bitcoin
+                    </th>
+                    <th>
+                        Ethereum
+                    </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Normal
+                        </td>
+                        <td>
+                            <div class="btc">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="eth">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Large
+                        </td>
+                        <td>
+                            <div class="btc large">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="eth large">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Dark
+                        </td>
+                        <td>
+                            <div class="btc dark">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="eth dark">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <script>
             (function(){
-                var cd = new CryptoDonate({
-                    baseURL: '../src/'
-                });
-                cd.appendTo(document.getElementById('normal'));
+                var btcElems = document.getElementsByClassName('btc');
+                for(i = 0;i < btcElems.length;i++) {
+                    var cd = new CryptoDonate({
+                        baseURL: '../src/',
+                        buttonLarge: btcElems[i].className.match('large') !== null,
 
-                var cd = new CryptoDonate({
-                    coin: 'ethereum',
-                    address: '0xF9744E1504a1ACB0493E6482525312d50af2785D',
-                    baseURL: '../src/',
-                    buttonLarge: true
-                });
-                cd.appendTo(document.getElementById('big'));
+                        buttonClass: btcElems[i].className.match('dark') !== null ? 'dark' : '',
+                        dialogClass: btcElems[i].className.match('dark') !== null ? 'dark' : ''
+                    });
+                    cd.appendTo(btcElems[i]);
+                }
 
-                var cd = new CryptoDonate({
-                    baseURL: '../src/',
-                    buttonClass: 'dark',
-                    dialogClass: 'dark'
-                });
-                cd.appendTo(document.getElementById('dark'));
+                var ethElems = document.getElementsByClassName('eth');
+                for(i = 0;i < ethElems.length;i++) {
+                    var cd = new CryptoDonate({
+                        coin: 'ethereum',
+                        address: '0xF9744E1504a1ACB0493E6482525312d50af2785D',
+                        baseURL: '../src/',
+                        buttonLarge: ethElems[i].className.match('large') !== null,
+
+                        buttonClass: ethElems[i].className.match('dark') !== null ? 'dark' : '',
+                        dialogClass: ethElems[i].className.match('dark') !== null ? 'dark' : ''
+                    });
+                    cd.appendTo(ethElems[i]);
+                }
             })(CryptoDonate);
         </script>
     </body>
