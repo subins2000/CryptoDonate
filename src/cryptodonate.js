@@ -97,10 +97,8 @@
                         $this.hideDialog();
                     }
                 });
-
-                document.getElementById('cryptodonate-close').addEventListener('click', function() {
-                    $this.hideDialog();
-                })
+                document.getElementById('cryptodonate-close').addEventListener('click', $this.hideDialog);
+                document.getElementById('cryptodonate-overlay').addEventListener('click', $this.hideDialog);
             }
         };
 
