@@ -30,7 +30,9 @@
         var cd = new CryptoDonate({
             coin: coin,
             address: address,
-            baseURL: '../src/'
+            baseURL: '../src/',
+            buttonClass: theme,
+            dialogClass: theme
         });
 
         $('#btn-preview').html('');
