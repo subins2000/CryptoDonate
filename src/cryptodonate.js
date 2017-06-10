@@ -24,7 +24,7 @@
                 coins: {
                     bitcoin: 'Bitcoin'
                 },
-                dialogHeader: 'Donate',
+                dialogHeader: 'Donate {coin}',
                 openInWallet: 'Click here to send this address to your wallet.'
             },
 
@@ -36,6 +36,16 @@
         init: function(config) {
             this.config = extend(this.config, config);
             return this;
+        },
+
+        getString: function(name, substitution) {
+            var string = this.config.strings[name];
+            var keys = Object.keys(substitution);
+
+            for (i = 0; i < keys.length; i++) {
+                string = string.replace('{' + keys[i] + '}', substitution[keys[i]]);
+            }
+            return string;
         },
 
         appendTo: function(elem) {
@@ -88,7 +98,9 @@
         },
 
         showDialog: function($this) {
-            document.getElementById('cryptodonate-action').innerHTML = this.config.strings.dialogHeader;
+            document.getElementById('cryptodonate-action').innerHTML = this.getString('dialogHeader', {
+                coin: this.config.strings.coins[this.config.coin]
+            });
             document.getElementById('cryptodonate-coin').src = this.config.baseURL + '/img/icon_' + this.config.coin + '.png';
             document.getElementById('cryptodonate-coin').title = this.config.coin;
             document.getElementById('cryptodonate-address').value = this.config.address;
