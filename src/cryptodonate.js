@@ -25,7 +25,8 @@
                 coins: {
                     bitcoin: 'Bitcoin',
                     ethereum: 'Ether',
-                    litecoin: 'Litecoin'
+                    litecoin: 'Litecoin',
+                    monero: 'Monero',
                 },
                 dialogHeader: 'Donate {coinName}',
                 dialogHelper: 'Please use this {coin} address to donate. Thanks !',
