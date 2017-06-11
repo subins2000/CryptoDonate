@@ -1,4 +1,4 @@
-(function() {
+(function(window) {
     /**
      * Merge two JSON objects
      * @param  {obj} obj1 Object to merge to
@@ -10,6 +10,7 @@
     }
 
     window.Fr = window.Fr || {};
+
     window.Fr.CryptoDonate = function(config) {
         this.config = {
             coin: 'bitcoin',
@@ -134,4 +135,4 @@
          */
         this.config = extend(this.config, config);
     };
-})(document);
+})(window);
