@@ -97,7 +97,7 @@
             !function(c){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.onload=c,t.src="../src/cryptodonate.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}(function(){
                     var btcElems = document.getElementsByClassName('btc');
                     for(var i = 0;i < btcElems.length;i++) {
-                        var cd = new CryptoDonate({
+                        var cd = new Fr.CryptoDonate({
                             baseURL: '../src/',
                             buttonLarge: btcElems[i].className.match('large') !== null,
 
@@ -109,7 +109,7 @@
 
                     var ethElems = document.getElementsByClassName('eth');
                     for(var i = 0;i < ethElems.length;i++) {
-                        var cd = new CryptoDonate({
+                        var cd = new Fr.CryptoDonate({
                             coin: 'ethereum',
                             address: '0xF9744E1504a1ACB0493E6482525312d50af2785D',
                             baseURL: '../src/',
@@ -123,7 +123,7 @@
 
                     var ltcElems = document.getElementsByClassName('ltc');
                     for(var i = 0;i < ethElems.length;i++) {
-                        var cd = new CryptoDonate({
+                        var cd = new Fr.CryptoDonate({
                             coin: 'litecoin',
                             address: 'LTQhef3dKB7vwdCGuhEuJvtDuemQEFEGvP',
                             baseURL: '../src/',
@@ -137,7 +137,7 @@
 
                     var xmrElems = document.getElementsByClassName('xmr');
                     for(var i = 0;i < ethElems.length;i++) {
-                        var cd = new CryptoDonate({
+                        var cd = new Fr.CryptoDonate({
                             coin: 'monero',
                             address: '463ZgKoBzN4WXaQPMVvCHHBe8ZE7cg44Q5mukaWfnZ2ngxUXYTaAg5jbxiBfk2jKyCSEB3qDHwmEgNL6KWqpBc2i9As4ez3',
                             baseURL: '../src/',
