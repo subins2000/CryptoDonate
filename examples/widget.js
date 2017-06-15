@@ -16,7 +16,7 @@
     }
 
     var code = '&lt;script&gt;\n';
-    code += '  !function(c){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.onload=c,t.src="//lab.subinsb.com/projects/Francium/cryptodonate/cryptodonate.min.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}(function(){\n';
+    code += '  !function(c){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.onload=c,t.src="//lab.subinsb.com/projects/francium/cryptodonate/cryptodonate.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}(function(){\n';
     code += '    var cd = new Fr.CryptoDonate({\n';
     code += '      coin: "{coin}",\n';
     code += '      address: "{address}",\n';
