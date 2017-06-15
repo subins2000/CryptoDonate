@@ -60,7 +60,6 @@
     $(document).ready(function() {
         $('#update').on('click', update);
         $('#form input').on('keyup', update);
-        $('#form select').material_select();
         $('#form select').on('change', update);
 
         $('#code').click(function() {
