@@ -22,19 +22,23 @@
         if (!document.getElementById('loadCD-css')) {
             loadCSS('cryptodonate.css');
 
-            if (options.buttonClass.match('dark')) {
+            if (options.buttonClass !== undefined && options.buttonClass.match('dark')) {
                 loadCSS('cryptodonate.dark.css')
             }
         }
 
         (function(c) {
-            var t = document.createElement("script");
-            t.type = "text/javascript",
-                t.async = true,
-                t.onload = c,
-                t.src = rootURL + "cryptodonate.js";
-            var e = document.getElementsByTagName("script")[0];
-            e.parentNode.insertBefore(t, e)
+            if (Fr.CryptoDonate === undefined) {
+                var t = document.createElement("script");
+                t.type = "text/javascript",
+                    t.async = true,
+                    t.onload = c,
+                    t.src = rootURL + "cryptodonate.js";
+                var e = document.getElementsByTagName("script")[0];
+                e.parentNode.insertBefore(t, e);
+            } else {
+                c();
+            }
         })(function() {
             new Fr.CryptoDonate(options).appendTo(target);
         });
