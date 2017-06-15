@@ -15,9 +15,11 @@
         }
     }
 
-    var code = '&lt;script&gt;\n';
-    code += '  !function(c){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.onload=c,t.src="//lab.subinsb.com/projects/francium/cryptodonate/cryptodonate.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}(function(){\n';
-    code += '    var cd = new Fr.CryptoDonate({\n';
+    var cdID = 'cd' + Math.round(Math.random() * 1000);
+    var code = '&lt;div id="' + cdID + '"&gt;&lt;/div&gt;\n';
+    code += '&lt;script&gt;\n';
+    code += '  !function(c){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.onload=c,t.src="//lab.subinsb.com/projects/francium/cryptodonate/widget.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}(function(){\n';
+    code += '    Fr.loadCD("' + cdID + '", {\n';
     code += '      coin: "{coin}",\n';
     code += '      address: "{address}",\n';
     code += '      buttonClass: "{theme}",\n';
@@ -34,7 +36,6 @@
         var cd = new Fr.CryptoDonate({
             coin: coin,
             address: address,
-            baseURL: '../src/',
             buttonClass: theme,
             dialogClass: theme
         });
