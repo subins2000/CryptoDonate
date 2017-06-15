@@ -131,27 +131,27 @@
         };
 
         this.showDialog = function($this) {
-                document.getElementById('cryptodonate-action').innerHTML = this.getString('dialogHeader');
+            document.getElementById('cryptodonate-action').innerHTML = this.getString('dialogHeader');
 
-                document.getElementById('cryptodonate-coin').src = this.config.baseURL + '/img/icon_' + this.config.coin + '.png';
-                document.getElementById('cryptodonate-coin').title = this.config.coin;
-                document.getElementById('cryptodonate-address').value = this.config.address;
-                document.getElementById('cryptodonate-helper').innerHTML = this.getString('dialogHelper');
+            document.getElementById('cryptodonate-coin').src = this.config.baseURL + '/img/icon_' + this.config.coin + '.png';
+            document.getElementById('cryptodonate-coin').title = this.config.coin;
+            document.getElementById('cryptodonate-address').value = this.config.address;
+            document.getElementById('cryptodonate-helper').innerHTML = this.getString('dialogHelper');
 
-                document.getElementById('cryptodonate-wallet').href = this.config.coin + ':' + this.config.address;
-                document.getElementById('cryptodonate-qr').src = this.config.getQRImage(this.config.address);
+            document.getElementById('cryptodonate-wallet').href = this.config.coin + ':' + this.config.address;
+            document.getElementById('cryptodonate-qr').src = this.config.getQRImage(this.config.address);
 
-                var dialog = document.getElementById('cryptodonate-dialog');
-                dialog.className = this.config.dialogClass;
-                dialog.style.display = 'block';
+            var dialog = document.getElementById('cryptodonate-dialog');
+            dialog.className = this.config.dialogClass;
+            dialog.style.display = 'block';
 
-                document.getElementById('cryptodonate-overlay').style.display = 'block';
-            },
+            document.getElementById('cryptodonate-overlay').style.display = 'block';
+        };
 
-            this.hideDialog = function() {
-                document.getElementById('cryptodonate-dialog').style.display = 'none';
-                document.getElementById('cryptodonate-overlay').style.display = 'none';
-            };
+        this.hideDialog = function() {
+            document.getElementById('cryptodonate-dialog').style.display = 'none';
+            document.getElementById('cryptodonate-overlay').style.display = 'none';
+        };
 
         /**
          * Constructor
