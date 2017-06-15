@@ -40,7 +40,7 @@
             address: '3Q2zmZA3LsW5JdxkJEPDRbsXu2YzzMQmBQ',
 
             qr: true,
-            getQrImage: function(data) {
+            getQRImage: function(data) {
                 return 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + data;
             },
 
@@ -139,7 +139,7 @@
                 document.getElementById('cryptodonate-helper').innerHTML = this.getString('dialogHelper');
 
                 document.getElementById('cryptodonate-wallet').href = this.config.coin + ':' + this.config.address;
-                document.getElementById('cryptodonate-qr').src = this.config.getQrImage(this.config.address);
+                document.getElementById('cryptodonate-qr').src = this.config.getQRImage(this.config.address);
 
                 var dialog = document.getElementById('cryptodonate-dialog');
                 dialog.className = this.config.dialogClass;
