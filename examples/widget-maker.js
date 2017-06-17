@@ -21,8 +21,8 @@
     code += '    Fr.loadCD("{cdID}", {\n';
     code += '      coin: "{coin}",\n';
     code += '      address: "{address}",\n';
-    code += '      buttonClass: "{theme}",\n';
-    code += '      dialogClass: "{theme}",\n';
+    code += '      buttonClass: "{classes}",\n';
+    code += '      dialogClass: "{classes}",\n';
     code += '    });\n';
     code += '  });\n';
     code += '&lt;/script&gt;';
@@ -30,14 +30,14 @@
     function update() {
         var address = $('#address').val();
         var coin = $('#coin').val();
-        var theme = $('#theme').val();
+        var classes = ($('#size').val() + ' ' + $('#theme').val()).trim();
         var cdID = 'cd' + Math.round(Math.random() * 1000);
 
         var cd = new Fr.CryptoDonate({
             coin: coin,
             address: address,
-            buttonClass: theme,
-            dialogClass: theme
+            buttonClass: classes,
+            dialogClass: classes
         });
 
         $('#btn-preview').html('');
@@ -47,7 +47,7 @@
         var substitution = {
             coin: coin,
             address: address,
-            theme: theme,
+            classes: classes,
             cdID: cdID
         };
         var keys = Object.keys(substitution);
