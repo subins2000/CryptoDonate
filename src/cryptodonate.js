@@ -54,7 +54,7 @@
                     monero: 'Monero',
                 },
                 dialogHeader: 'Donate {coinName}',
-                dialogHelper: 'Please use this {coin} address to donate. Thanks !',
+                dialogHelper: 'Please use this {coin} address to donate. <br/> Thanks for your contribution !',
                 openInWallet: 'Click here to send this address to your wallet.'
             },
 
