@@ -3,6 +3,7 @@
     <head>
         <link href="../src/css/cryptodonate.css" rel="stylesheet"/>
         <link href="../src/css/cryptodonate.dark.css" rel="stylesheet"/>
+        <link href="../src/css/cryptodonate.pink.css" rel="stylesheet"/>
         <title>
             CryptoDonate
         </title>
@@ -90,6 +91,27 @@
                             </div>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            Pink
+                        </td>
+                        <td>
+                            <div class="btc pink" data-theme="pink">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="eth pink" data-theme="pink">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ltc pink" data-theme="pink">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="xmr" data-theme="pink">
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -101,8 +123,8 @@
                             baseURL: '../src/',
                             buttonLarge: btcElems[i].className.match('large') !== null,
 
-                            buttonClass: btcElems[i].className.match('dark') !== null ? 'dark' : '',
-                            dialogClass: btcElems[i].className.match('dark') !== null ? 'dark' : ''
+                            buttonClass: btcElems[i].getAttribute('data-theme'),
+                            dialogClass: btcElems[i].getAttribute('data-theme')
                         });
                         cd.appendTo(btcElems[i]);
                     }
@@ -115,8 +137,8 @@
                             baseURL: '../src/',
                             buttonLarge: ethElems[i].className.match('large') !== null,
 
-                            buttonClass: ethElems[i].className.match('dark') !== null ? 'dark' : '',
-                            dialogClass: ethElems[i].className.match('dark') !== null ? 'dark' : ''
+                            buttonClass: ethElems[i].getAttribute('data-theme'),
+                            dialogClass: ethElems[i].getAttribute('data-theme')
                         });
                         cd.appendTo(ethElems[i]);
                     }
@@ -129,8 +151,8 @@
                             baseURL: '../src/',
                             buttonLarge: ltcElems[i].className.match('large') !== null,
 
-                            buttonClass: ltcElems[i].className.match('dark') !== null ? 'dark' : '',
-                            dialogClass: ltcElems[i].className.match('dark') !== null ? 'dark' : ''
+                            buttonClass: ltcElems[i].getAttribute('data-theme'),
+                            dialogClass: ltcElems[i].getAttribute('data-theme')
                         });
                         cd.appendTo(ltcElems[i]);
                     }
@@ -143,8 +165,8 @@
                             baseURL: '../src/',
                             buttonLarge: xmrElems[i].className.match('large') !== null,
 
-                            buttonClass: xmrElems[i].className.match('dark') !== null ? 'dark' : '',
-                            dialogClass: xmrElems[i].className.match('dark') !== null ? 'dark' : ''
+                            buttonClass: xmrElems[i].getAttribute('data-theme'),
+                            dialogClass: xmrElems[i].getAttribute('data-theme')
                         });
                         cd.appendTo(xmrElems[i]);
                     }
