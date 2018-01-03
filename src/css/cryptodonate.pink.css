@@ -1,0 +1,17 @@
+.cryptodonate-btn.pink {
+    background: #e91e63;
+    color: #fff;
+}
+
+#cryptodonate-dialog.pink {
+    background: #e91e63;
+    color: #fff;
+}
+
+#cryptodonate-dialog.pink #cryptodonate-credit {
+    color: #fff;
+}
+
+#cryptodonate-action, #cryptodonate-addressHolder {
+    border-bottom-color: #fff;
+}
