@@ -34,19 +34,19 @@
                             Normal
                         </td>
                         <td>
-                            <div class="btc">
+                            <div class="bitcoin">
                             </div>
                         </td>
                         <td>
-                            <div class="eth">
+                            <div class="ethereum">
                             </div>
                         </td>
                         <td>
-                            <div class="ltc">
+                            <div class="litecoin">
                             </div>
                         </td>
                         <td>
-                            <div class="xmr">
+                            <div class="monero">
                             </div>
                         </td>
                     </tr>
@@ -55,19 +55,19 @@
                             Large
                         </td>
                         <td>
-                            <div class="btc large">
+                            <div class="bitcoin large">
                             </div>
                         </td>
                         <td>
-                            <div class="eth large">
+                            <div class="ethereum large">
                             </div>
                         </td>
                         <td>
-                            <div class="ltc large">
+                            <div class="litecoin large">
                             </div>
                         </td>
                         <td>
-                            <div class="xmr large">
+                            <div class="monero large">
                             </div>
                         </td>
                     </tr>
@@ -76,19 +76,19 @@
                             Dark
                         </td>
                         <td>
-                            <div class="btc" data-theme="dark">
+                            <div class="bitcoin" data-theme="dark">
                             </div>
                         </td>
                         <td>
-                            <div class="eth" data-theme="dark">
+                            <div class="ethereum" data-theme="dark">
                             </div>
                         </td>
                         <td>
-                            <div class="ltc" data-theme="dark">
+                            <div class="litecoin" data-theme="dark">
                             </div>
                         </td>
                         <td>
-                            <div class="xmr" data-theme="dark">
+                            <div class="monero" data-theme="dark">
                             </div>
                         </td>
                     </tr>
@@ -97,19 +97,19 @@
                             Pink
                         </td>
                         <td>
-                            <div class="btc" data-theme="pink">
+                            <div class="bitcoin" data-theme="pink">
                             </div>
                         </td>
                         <td>
-                            <div class="eth" data-theme="pink">
+                            <div class="ethereum" data-theme="pink">
                             </div>
                         </td>
                         <td>
-                            <div class="ltc" data-theme="pink">
+                            <div class="litecoin" data-theme="pink">
                             </div>
                         </td>
                         <td>
-                            <div class="xmr" data-theme="pink">
+                            <div class="monero" data-theme="pink">
                             </div>
                         </td>
                     </tr>
@@ -118,19 +118,19 @@
                             Green
                         </td>
                         <td>
-                            <div class="btc" data-theme="green">
+                            <div class="bitcoin" data-theme="green">
                             </div>
                         </td>
                         <td>
-                            <div class="eth" data-theme="green">
+                            <div class="ethereum" data-theme="green">
                             </div>
                         </td>
                         <td>
-                            <div class="ltc" data-theme="green">
+                            <div class="litecoin" data-theme="green">
                             </div>
                         </td>
                         <td>
-                            <div class="xmr" data-theme="green">
+                            <div class="monero" data-theme="green">
                             </div>
                         </td>
                     </tr>
@@ -139,58 +139,32 @@
         </div>
         <script>
             !function(c){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.onload=c,t.src="../src/cryptodonate.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}(function(){
-                    var btcElems = document.getElementsByClassName('btc');
-                    for(var i = 0;i < btcElems.length;i++) {
-                        var cd = new Fr.CryptoDonate({
-                            baseURL: '../src/',
-                            buttonLarge: btcElems[i].className.match('large') !== null,
 
-                            buttonClass: btcElems[i].getAttribute('data-theme'),
-                            dialogClass: btcElems[i].getAttribute('data-theme')
-                        });
-                        cd.appendTo(btcElems[i]);
-                    }
+                    var coins = {
+                        'bitcoin': '3Q2zmZA3LsW5JdxkJEPDRbsXu2YzzMQmBQ',
+                        'ethereum': '0xF9744E1504a1ACB0493E6482525312d50af2785D',
+                        'litecoin': 'LTQhef3dKB7vwdCGuhEuJvtDuemQEFEGvP',
+                        'monero': '463ZgKoBzN4WXaQPMVvCHHBe8ZE7cg44Q5mukaWfnZ2ngxUXYTaAg5jbxiBfk2jKyCSEB3qDHwmEgNL6KWqpBc2i9As4ez3'
+                    };
+                    var coinNames = Object.keys(coins);
 
-                    var ethElems = document.getElementsByClassName('eth');
-                    for(var i = 0;i < ethElems.length;i++) {
-                        var cd = new Fr.CryptoDonate({
-                            coin: 'ethereum',
-                            address: '0xF9744E1504a1ACB0493E6482525312d50af2785D',
-                            baseURL: '../src/',
-                            buttonLarge: ethElems[i].className.match('large') !== null,
+                    for (var i = 0;i < coinNames.length;i++) {
+                        var coin = coinNames[i];
+                        var address = coins[coin];
+                        var elems = document.getElementsByClassName(coin);
 
-                            buttonClass: ethElems[i].getAttribute('data-theme'),
-                            dialogClass: ethElems[i].getAttribute('data-theme')
-                        });
-                        cd.appendTo(ethElems[i]);
-                    }
+                        for(var j = 0;j < elems.length;j++) {
+                            var cd = new Fr.CryptoDonate({
+                                coin: coin,
+                                address: address,
+                                baseURL: '../src/',
+                                buttonLarge: elems[j].className.match('large') !== null,
 
-                    var ltcElems = document.getElementsByClassName('ltc');
-                    for(var i = 0;i < ethElems.length;i++) {
-                        var cd = new Fr.CryptoDonate({
-                            coin: 'litecoin',
-                            address: 'LTQhef3dKB7vwdCGuhEuJvtDuemQEFEGvP',
-                            baseURL: '../src/',
-                            buttonLarge: ltcElems[i].className.match('large') !== null,
-
-                            buttonClass: ltcElems[i].getAttribute('data-theme'),
-                            dialogClass: ltcElems[i].getAttribute('data-theme')
-                        });
-                        cd.appendTo(ltcElems[i]);
-                    }
-
-                    var xmrElems = document.getElementsByClassName('xmr');
-                    for(var i = 0;i < ethElems.length;i++) {
-                        var cd = new Fr.CryptoDonate({
-                            coin: 'monero',
-                            address: '463ZgKoBzN4WXaQPMVvCHHBe8ZE7cg44Q5mukaWfnZ2ngxUXYTaAg5jbxiBfk2jKyCSEB3qDHwmEgNL6KWqpBc2i9As4ez3',
-                            baseURL: '../src/',
-                            buttonLarge: xmrElems[i].className.match('large') !== null,
-
-                            buttonClass: xmrElems[i].getAttribute('data-theme'),
-                            dialogClass: xmrElems[i].getAttribute('data-theme')
-                        });
-                        cd.appendTo(xmrElems[i]);
+                                buttonClass: elems[j].getAttribute('data-theme'),
+                                dialogClass: elems[j].getAttribute('data-theme')
+                            });
+                            cd.appendTo(elems[j]);
+                        }
                     }
               });
         </script>
