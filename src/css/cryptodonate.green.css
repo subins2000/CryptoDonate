@@ -12,6 +12,6 @@
     color: #fff;
 }
 
-#cryptodonate-action, #cryptodonate-addressHolder {
+#cryptodonate-dialog.green #cryptodonate-action, #cryptodonate-dialog.green #cryptodonate-addressHolder {
     border-bottom-color: #fff;
 }
