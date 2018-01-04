@@ -15,6 +15,9 @@
                     <th>
                     </th>
                     <th>
+                        All In One
+                    </th>
+                    <th>
                         Bitcoin
                     </th>
                     <th>
@@ -31,6 +34,10 @@
                     <tr>
                         <td>
                             Normal
+                        </td>
+                        <td>
+                            <div class="multi">
+                            </div>
                         </td>
                         <td>
                             <div class="btc">
@@ -54,6 +61,10 @@
                             Large
                         </td>
                         <td>
+                            <div class="multi large">
+                            </div>
+                        </td>
+                        <td>
                             <div class="btc large">
                             </div>
                         </td>
@@ -73,6 +84,10 @@
                     <tr>
                         <td>
                             Dark
+                        </td>
+                        <td>
+                            <div class="multi dark">
+                            </div>
                         </td>
                         <td>
                             <div class="btc dark">
@@ -96,6 +111,10 @@
                             Pink
                         </td>
                         <td>
+                            <div class="multi pink" data-theme="pink">
+                            </div>
+                        </td>
+                        <td>
                             <div class="btc pink" data-theme="pink">
                             </div>
                         </td>
@@ -117,6 +136,23 @@
         </div>
         <script>
             !function(c){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.onload=c,t.src="../src/cryptodonate.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}(function(){
+                    var multiElems = document.getElementsByClassName('multi');
+                    for(var i = 0;i < multiElems.length;i++) {
+                        var cd = new Fr.CryptoDonate({
+                            coin: {
+                                bitcoin: '3Q2zmZA3LsW5JdxkJEPDRbsXu2YzzMQmBQ',
+                                ethereum: '0xF9744E1504a1ACB0493E6482525312d50af2785D'
+                            },
+                            address: '',
+                            baseURL: '../src/',
+                            buttonLarge: multiElems[i].className.match('large') !== null,
+
+                            buttonClass: multiElems[i].getAttribute('data-theme'),
+                            dialogClass: multiElems[i].getAttribute('data-theme')
+                        });
+                        cd.appendTo(multiElems[i]);
+                    }
+
                     var btcElems = document.getElementsByClassName('btc');
                     for(var i = 0;i < btcElems.length;i++) {
                         var cd = new Fr.CryptoDonate({
