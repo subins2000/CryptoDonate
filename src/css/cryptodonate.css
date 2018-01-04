@@ -142,12 +142,12 @@
     padding: 20px 5px 15px;
     background: #000;
     text-align: center;
+    border-radius: 10px;
 }
 
 .cryptodonate-coin-toggle {
     display: block;
     margin: 0 0 10px;
-    border-radius: 10px;
 }
 
 
