@@ -1,0 +1,17 @@
+.cryptodonate-btn.green {
+    background: #4CAF50;
+    color: #fff;
+}
+
+#cryptodonate-dialog.green {
+    background: #4CAF50;
+    color: #fff;
+}
+
+#cryptodonate-dialog.green #cryptodonate-credit {
+    color: #fff;
+}
+
+#cryptodonate-action, #cryptodonate-addressHolder {
+    border-bottom-color: #fff;
+}
