@@ -124,6 +124,32 @@
     width: 200px;
 }
 
+#cryptodonate-coins {
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 50px;
+    padding: 20px 5px;
+    background: #000;
+    text-align: center;
+}
+
+#cryptodonate-coins {
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 50px;
+    padding: 20px 5px 15px;
+    background: #000;
+    text-align: center;
+}
+
+.cryptodonate-coin-toggle {
+    display: block;
+    margin: 0 0 10px;
+    border-radius: 10px;
+}
+
 
 /**
  * Don't be evil. Please let this credit be seen

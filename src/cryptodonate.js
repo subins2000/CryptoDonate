@@ -36,6 +36,7 @@
 
     window.Fr.CryptoDonate = function(config) {
         this.config = {
+            multi: false,
             coin: 'bitcoin',
             address: '3Q2zmZA3LsW5JdxkJEPDRbsXu2YzzMQmBQ',
 
@@ -47,6 +48,7 @@
             strings: {
                 button: 'Donate',
                 buttonTitle: 'Donate {coinName}',
+                coinName: '{coinName}',
                 coins: {
                     bitcoin: 'Bitcoin',
                     ethereum: 'Ether',
@@ -110,7 +112,8 @@
                 dialog.innerHTML += '<div id="cryptodonate-addressHolder"><img id="cryptodonate-coin" /><input type="text" id="cryptodonate-address" readonly="readonly" onclick="this.select();" /><a id="cryptodonate-wallet" target="_blank" href="" title="' + this.config.strings.openInWallet + '"><img src="' + this.config.baseURL + '/img/wallet.png" /></a></div>';
                 dialog.innerHTML += '<div id="cryptodonate-qrHolder"><img id="cryptodonate-qr"></img></div>';
                 dialog.innerHTML += '<a id="cryptodonate-credit" href="https://subinsb.com/cryptodonate" target="_blank">CryptoDonate</a>';
-                dialog.innerHTML += '<a id="cryptodonate-close">x</a>'
+                dialog.innerHTML += '<a id="cryptodonate-close">x</a>';
+                dialog.innerHTML += '<div id="cryptodonate-coins"></div>';
 
                 document.body.appendChild(dialog);
 
@@ -141,6 +144,17 @@
             document.getElementById('cryptodonate-wallet').href = this.config.coin + ':' + this.config.address;
             document.getElementById('cryptodonate-qr').src = this.config.getQRImage(this.config.address);
 
+            if (this.config.multi) {
+                var coinList = '';
+                var coins = Object.keys(this.config.coin);
+
+                for (var i = 0; i < coins.length; i++) {
+                    coinList += '<a class="cryptodonate-coin-toggle"><img src="' + this.config.baseURL + '/img/icon_' + coins[i] + '.png" /></a>';
+                }
+
+                document.getElementById('cryptodonate-coins').innerHTML = coinList;
+            }
+
             var dialog = document.getElementById('cryptodonate-dialog');
             dialog.className = this.config.dialogClass;
             dialog.style.display = 'block';
@@ -157,5 +171,9 @@
          * Constructor
          */
         this.config = extend(this.config, config);
+
+        if (typeof this.config.coin == 'object') {
+            this.config.multi = true;
+        }
     };
 })(window);
