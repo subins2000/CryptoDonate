@@ -52,6 +52,7 @@
                     ethereum: 'Ether',
                     litecoin: 'Litecoin',
                     monero: 'Monero',
+                    iota: 'IOTA',
                 },
                 dialogHeader: 'Donate {coinName}',
                 dialogHelper: 'Please use this {coin} address to donate. <br/> Thanks for your contribution !',
